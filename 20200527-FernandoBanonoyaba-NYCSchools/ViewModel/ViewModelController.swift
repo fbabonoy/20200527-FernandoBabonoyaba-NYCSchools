@@ -18,9 +18,9 @@ protocol  ViewModelControllerProtocal {
     func getName(_ row: Int) -> String?
     func getCount() -> Int
     func getID(_ row: Int) -> String?
-    func reading() -> String
-    func math() -> String
-    func writing() -> String
+    func getReadingScore() -> String
+    func getMathScore() -> String
+    func getWritingScore() -> String
 }
 
 class ViewModelController: ViewModelControllerProtocal {
@@ -61,15 +61,15 @@ class ViewModelController: ViewModelControllerProtocal {
         responseData[row].id
     }
     
-    func reading() -> String {
+    func getReadingScore() -> String {
         responseData.isEmpty ? "N/A" : responseData[0].reading!
     }
     
-    func math() -> String {
+    func getMathScore() -> String {
         responseData.isEmpty ? "N/A" : responseData[0].math!
     }
     
-    func writing() -> String {
+    func getWritingScore() -> String {
         responseData.isEmpty ? "N/A" : responseData[0].writing!
     }
     

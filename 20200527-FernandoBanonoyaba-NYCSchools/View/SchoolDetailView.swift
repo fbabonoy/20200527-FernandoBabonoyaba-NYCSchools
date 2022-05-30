@@ -102,9 +102,9 @@ extension SchoolDetailView: NetworkDelegate {
     
     func dataFinished() {
         
-        reading.text = reading.text?.appending(network.reading())
-        math.text = math.text?.appending(network.math())
-        writing.text = writing.text?.appending(network.writing())
+        reading.text = reading.text?.appending(network.getReadingScore())
+        math.text = math.text?.appending(network.getMathScore())
+        writing.text = writing.text?.appending(network.getWritingScore())
         
     }
     

@@ -32,15 +32,15 @@ class ViewModelControllerTests: XCTestCase {
     }
     
     func testViewModelMathScore() {
-        XCTAssertEqual(network?.math(), "404")
+        XCTAssertEqual(network?.getMathScore(), "404")
     }
     
     func testViewModelReadingScore() {
-        XCTAssertEqual(network?.reading(), "355")
+        XCTAssertEqual(network?.getReadingScore(), "355")
     }
     
     func testViewModelWritingScore() {
-        XCTAssertEqual(network?.writing(), "363")
+        XCTAssertEqual(network?.getWritingScore(), "363")
     }
 }
 
