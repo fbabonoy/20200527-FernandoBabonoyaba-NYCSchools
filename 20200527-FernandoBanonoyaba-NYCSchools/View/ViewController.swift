@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
     }
 
-    func setUp() {
+    private func setUp() {
         view.addSubview(tableOfSchools)
         
         tableOfSchools.rowHeight = 40
@@ -55,7 +55,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SchoolTitleCell.id, for: indexPath) as? SchoolTitleCell else { return SchoolTitleCell() }
-        cell.lable.text = network.getName(indexPath.row)
+        cell.titleCell.text = network.getName(indexPath.row)
         return cell
     }
     
@@ -65,8 +65,10 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let id = network.getID(indexPath.row) else { return }
+        guard let schoolName = network.getName(indexPath.row) else { return }
+
         let detailView = SchoolDetailView()
-        detailView.setId(id: id)
+        detailView.setDetails(id: id, schoolName: schoolName)
         present(detailView, animated: true)
     }
 }

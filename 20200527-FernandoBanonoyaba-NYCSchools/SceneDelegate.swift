@@ -21,7 +21,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
     }
 
-
-
 }
 

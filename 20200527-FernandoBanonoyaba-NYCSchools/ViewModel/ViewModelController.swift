@@ -45,19 +45,31 @@ class ViewModelController {
     }
     
     func getName(_ row: Int) -> String? {
-        return responseData[row].schoolName
+        responseData[row].schoolName
     }
     
     func getCount() -> Int {
-        return responseData.count
+        responseData.count
     }
    
     func getID(_ row: Int) -> String? {
-        return responseData[row].id
+        responseData[row].id
+    }
+    
+    func reading(_ row: Int) -> String? {
+        responseData[row].reading
+    }
+    
+    func math(_ row: Int) -> String? {
+        responseData[row].math
+    }
+    
+    func writing(_ row: Int) -> String? {
+        responseData[row].writing
     }
     
     func isNotEmpty() -> Bool {
-        return !responseData.isEmpty
+        !responseData.isEmpty
     }
 }
 
