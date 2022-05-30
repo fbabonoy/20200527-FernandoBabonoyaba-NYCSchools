@@ -102,15 +102,9 @@ extension SchoolDetailView: NetworkDelegate {
     
     func dataFinished() {
         
-        if network.isNotEmpty() {
-            math.text = math.text?.appending(network.math(0) ?? "")
-            reading.text = reading.text?.appending(network.reading(0) ?? "")
-            writing.text = writing.text?.appending(network.writing(0) ?? "")
-        } else {
-            math.text = math.text?.appending("N/A")
-            reading.text = reading.text?.appending("N/A")
-            writing.text = writing.text?.appending("N/A")
-        }
+        reading.text = reading.text?.appending(network.reading())
+        math.text = math.text?.appending(network.math())
+        writing.text = writing.text?.appending(network.writing())
         
     }
     

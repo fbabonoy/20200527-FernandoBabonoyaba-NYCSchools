@@ -12,7 +12,18 @@ protocol NetworkDelegate: AnyObject {
     func dataFinished()
 }
 
-class ViewModelController {
+protocol  ViewModelControllerProtocal {
+    
+    func createData(urlString: String)
+    func getName(_ row: Int) -> String?
+    func getCount() -> Int
+    func getID(_ row: Int) -> String?
+    func reading() -> String
+    func math() -> String
+    func writing() -> String
+}
+
+class ViewModelController: ViewModelControllerProtocal {
    
     var responseData = [ResponseModel]()
     weak var loadData: NetworkDelegate?
@@ -21,7 +32,6 @@ class ViewModelController {
     
     init(networkManager: NetworkManagerProtocol = NetworkManager()){
         self.networkManager = networkManager
-        
     }
     
     func createData(urlString: String = NetworkURL.url) {
@@ -29,19 +39,14 @@ class ViewModelController {
     }
     
     private func createData(url: String?) {
-
-        networkManager?.getArticles(urlString: url){ articles in
-            
-            if let articles = articles {
-                
-                self.responseData = articles
-                
+        networkManager?.getArticles(urlString: url){ schoolData in
+            if let response = schoolData {
+                self.responseData = response
                 DispatchQueue.main.async {
                     self.loadData?.dataFinished()
                 }
             }
         }
-       
     }
     
     func getName(_ row: Int) -> String? {
@@ -56,21 +61,18 @@ class ViewModelController {
         responseData[row].id
     }
     
-    func reading(_ row: Int) -> String? {
-        responseData[row].reading
+    func reading() -> String {
+        responseData.isEmpty ? "N/A" : responseData[0].reading!
     }
     
-    func math(_ row: Int) -> String? {
-        responseData[row].math
+    func math() -> String {
+        responseData.isEmpty ? "N/A" : responseData[0].math!
     }
     
-    func writing(_ row: Int) -> String? {
-        responseData[row].writing
+    func writing() -> String {
+        responseData.isEmpty ? "N/A" : responseData[0].writing!
     }
     
-    func isNotEmpty() -> Bool {
-        !responseData.isEmpty
-    }
 }
 
 

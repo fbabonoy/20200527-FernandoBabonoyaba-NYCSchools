@@ -12,7 +12,7 @@
 		247E7BF72842639C00931017 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E7BF62842639C00931017 /* ViewController.swift */; };
 		247E7BFC2842639E00931017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247E7BFB2842639E00931017 /* Assets.xcassets */; };
 		247E7BFF2842639E00931017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247E7BFD2842639E00931017 /* LaunchScreen.storyboard */; };
-		247E7C0A2842639F00931017 /* _0200527_FernandoBanonoyaba_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E7C092842639E00931017 /* _0200527_FernandoBanonoyaba_NYCSchoolsTests.swift */; };
+		247E7C0A2842639F00931017 /* ViewModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E7C092842639E00931017 /* ViewModelControllerTests.swift */; };
 		247E7C272842665000931017 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E7C262842665000931017 /* ResponseModel.swift */; };
 		247E7C292842669E00931017 /* NetworkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E7C282842669E00931017 /* NetworkURL.swift */; };
 		247E7C2B284266C500931017 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E7C2A284266C500931017 /* NetworkError.swift */; };
@@ -43,7 +43,7 @@
 		247E7BFE2842639E00931017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		247E7C002842639E00931017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		247E7C052842639E00931017 /* 20200527-FernandoBanonoyaba-NYCSchoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20200527-FernandoBanonoyaba-NYCSchoolsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		247E7C092842639E00931017 /* _0200527_FernandoBanonoyaba_NYCSchoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0200527_FernandoBanonoyaba_NYCSchoolsTests.swift; sourceTree = "<group>"; };
+		247E7C092842639E00931017 /* ViewModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelControllerTests.swift; sourceTree = "<group>"; };
 		247E7C262842665000931017 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		247E7C282842669E00931017 /* NetworkURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkURL.swift; sourceTree = "<group>"; };
 		247E7C2A284266C500931017 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		247E7C082842639E00931017 /* 20200527-FernandoBanonoyaba-NYCSchoolsTests */ = {
 			isa = PBXGroup;
 			children = (
-				247E7C092842639E00931017 /* _0200527_FernandoBanonoyaba_NYCSchoolsTests.swift */,
+				247E7C092842639E00931017 /* ViewModelControllerTests.swift */,
 				247E7C342844069500931017 /* MockNetworkManager.swift */,
 				247E7C3628440A5C00931017 /* schools.json */,
 			);
@@ -271,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247E7C0A2842639F00931017 /* _0200527_FernandoBanonoyaba_NYCSchoolsTests.swift in Sources */,
+				247E7C0A2842639F00931017 /* ViewModelControllerTests.swift in Sources */,
 				247E7C352844069500931017 /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

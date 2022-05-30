@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct ResponseModel: Codable {
 
     let id: String?

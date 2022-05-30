@@ -24,10 +24,10 @@ class NetworkManager: NetworkManagerProtocol {
                 completion(nil)
             } else if let data = data {
                 
-                let articleList = try? JSONDecoder().decode([ResponseModel].self, from: data)
+                let schoolList = try? JSONDecoder().decode([ResponseModel].self, from: data)
                 
-                if let articleList = articleList {
-                    completion(articleList)
+                if let response = schoolList {
+                    completion(response)
                 }
                                 
             }
