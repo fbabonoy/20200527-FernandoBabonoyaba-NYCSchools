@@ -13,7 +13,6 @@ protocol NetworkDelegate: AnyObject {
 }
 
 protocol  ViewModelControllerProtocal {
-    
     func createData(urlString: String)
     func getName(_ row: Int) -> String?
     func getCount() -> Int
@@ -39,7 +38,7 @@ class ViewModelController: ViewModelControllerProtocal {
     }
     
     private func createData(url: String?) {
-        networkManager?.getArticles(urlString: url){ schoolData in
+        networkManager?.getData(urlString: url){ schoolData in
             if let response = schoolData {
                 self.responseData = response
                 DispatchQueue.main.async {

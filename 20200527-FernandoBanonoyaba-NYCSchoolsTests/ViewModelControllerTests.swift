@@ -24,7 +24,7 @@ class ViewModelControllerTests: XCTestCase {
     }
     
     func testViewModelName() {
-        XCTAssertEqual(network?.getName(0)!, "Clinton School")
+        XCTAssertEqual(network?.getName(0), "Clinton School")
     }
     
     func testViewModelID() {

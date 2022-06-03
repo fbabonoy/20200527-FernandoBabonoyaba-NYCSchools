@@ -10,7 +10,7 @@ import Foundation
 
 class MockNetworkManager: NetworkManagerProtocol {
     
-    func getArticles(urlString: String?, completion: @escaping ([ResponseModel]?) -> ()) {
+    func getData(urlString: String?, completion: @escaping ([ResponseModel]?) -> ()) {
         let bundle = Bundle(for: MockNetworkManager.self)
     
         guard let url = bundle.url(forResource: "schools", withExtension: "json")

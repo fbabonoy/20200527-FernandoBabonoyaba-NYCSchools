@@ -8,11 +8,11 @@
 import Foundation
 
 protocol NetworkManagerProtocol {
-    func getArticles(urlString: String?, completion: @escaping ([ResponseModel]?) -> ())}
+    func getData(urlString: String?, completion: @escaping ([ResponseModel]?) -> ())}
 
 class NetworkManager: NetworkManagerProtocol {
     
-    func getArticles(urlString: String?, completion: @escaping ([ResponseModel]?) -> ()) {
+    func getData(urlString: String?, completion: @escaping ([ResponseModel]?) -> ()) {
         guard let urlUnwraped = urlString else { return }
 
         guard let url = URL(string: urlUnwraped) else { return }
