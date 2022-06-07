@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return network.getCount()
+        return network.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +78,25 @@ extension ViewController: NetworkDelegate {
     func dataFinished() {
         tableOfSchools.reloadData()
         
+    }
+    
+    func errorOccured(error: Error) {
+        self.presentAlert(message: error.localizedDescription)
+    }
+    
+}
+
+
+
+extension UIViewController {
+    
+    func presentAlert(message: String) {
+        let alert = UIAlertController(title: "Something Went Wrong", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Okay", style: .default)
+        alert.addAction(action)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
     }
     
 }

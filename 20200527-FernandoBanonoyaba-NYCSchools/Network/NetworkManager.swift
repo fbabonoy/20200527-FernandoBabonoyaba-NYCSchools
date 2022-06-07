@@ -8,11 +8,11 @@
 import Foundation
 
 protocol NetworkManagerProtocol {
-    func getData(urlString: String?, completion: @escaping ([ResponseModel]?) -> ())}
+    func getData(urlString: String?, completion: @escaping (([ResponseModel]?, NetworkError?)) -> ())}
 
 class NetworkManager: NetworkManagerProtocol {
     
-    func getData(urlString: String?, completion: @escaping ([ResponseModel]?) -> ()) {
+    func getData(urlString: String?, completion: @escaping (([ResponseModel]?, NetworkError?)) -> ()) {
         guard let urlUnwraped = urlString else { return }
 
         guard let url = URL(string: urlUnwraped) else { return }
@@ -21,13 +21,15 @@ class NetworkManager: NetworkManagerProtocol {
             
             if let error = error {
                 print(error.localizedDescription)
-                completion(nil)
+                completion((nil, NetworkError.other(error)))
             } else if let data = data {
                 
                 let schoolList = try? JSONDecoder().decode([ResponseModel].self, from: data)
                 
                 if let response = schoolList {
-                    completion(response)
+                    completion((response, nil))
+                } else {
+                    completion((nil, NetworkError.badURL))
                 }
                                 
             }

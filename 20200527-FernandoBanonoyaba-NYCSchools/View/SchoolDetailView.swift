@@ -108,4 +108,8 @@ extension SchoolDetailView: NetworkDelegate {
         
     }
     
+    func errorOccured(error: Error) {
+        self.presentAlert(message: error.localizedDescription)
+    }
+    
 }

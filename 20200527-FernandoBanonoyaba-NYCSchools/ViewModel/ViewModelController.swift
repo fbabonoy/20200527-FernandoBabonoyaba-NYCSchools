@@ -10,12 +10,14 @@ import UIKit
 
 protocol NetworkDelegate: AnyObject {
     func dataFinished()
+    func errorOccured(error: Error)
 }
 
 protocol  ViewModelControllerProtocal {
     func createData(urlString: String)
     func getName(_ row: Int) -> String?
     func getCount() -> Int
+    var count: Int { get }
     func getID(_ row: Int) -> String?
     func getReadingScore() -> String
     func getMathScore() -> String
@@ -37,13 +39,15 @@ class ViewModelController: ViewModelControllerProtocal {
         createData(url: urlString)
     }
     
-    private func createData(url: String?) {
+    private func createData(url: String? ) {
         networkManager?.getData(urlString: url){ schoolData in
-            if let response = schoolData {
+            if let response = schoolData.0 {
                 self.responseData = response
                 DispatchQueue.main.async {
                     self.loadData?.dataFinished()
                 }
+            } else if let error = schoolData.1 {
+                self.loadData?.errorOccured(error: error)
             }
         }
     }
@@ -53,6 +57,10 @@ class ViewModelController: ViewModelControllerProtocal {
     }
     
     func getCount() -> Int {
+        responseData.count
+    }
+    
+    var count: Int {
         responseData.count
     }
    
